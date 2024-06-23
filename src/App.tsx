@@ -1,5 +1,27 @@
+import React from 'react';
+import Cards from './components/Cards';
+import SearchForm from './components/SearchForm';
+
 const App = () => {
-  return <div></div>;
+  let usersLocal = window.localStorage.getItem('users');
+  const [usersList, setUsersList] = React.useState<string[]>(
+    usersLocal ? JSON.parse(usersLocal) : []
+  );
+
+  React.useEffect(() => {
+    window.localStorage.setItem('users', JSON.stringify(usersList));
+  }, [usersList]);
+
+  return (
+    <div className="App">
+      <header className="">
+        <SearchForm setUsersList={setUsersList} />
+      </header>
+      <main>
+        <Cards usersList={usersList} />
+      </main>
+    </div>
+  );
 };
 
 export default App;
