@@ -8,11 +8,14 @@ interface Props {
 const SearchForm = ({ setUsersList }: Props) => {
   const [searchInput, setSearchInput] = React.useState('');
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     setUsersList(prev => {
-      return [...prev, searchInput];
+      const newUsersList = [...prev, searchInput];
+      window.localStorage.setItem('users', JSON.stringify(newUsersList));
+
+      return newUsersList;
     });
 
     setSearchInput('');

@@ -8,10 +8,6 @@ const App = () => {
     usersLocal ? JSON.parse(usersLocal) : []
   );
 
-  React.useEffect(() => {
-    window.localStorage.setItem('users', JSON.stringify(usersList));
-  }, [usersList]);
-
   return (
     <div className="App">
       <header className="">
