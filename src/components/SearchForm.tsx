@@ -22,9 +22,16 @@ const SearchForm = ({ setUsersList }: Props) => {
   }
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <label htmlFor="username">Usuario Github</label>
+    <form
+      className="w-full text-sm flex items-center gap-2 text-[#333] bg-[#fff] px-1 py-1 pl-2 rounded-[4px] shadow-[0_0_4px_#00000040]"
+      action=""
+      onSubmit={handleSubmit}
+    >
+      <label className="" htmlFor="username">
+        Usuario Github
+      </label>
       <input
+        className="outline outline-1 outline-[#00000020] px-2 py-1 bg-[#e6e6e650] rounded-[4px]"
         type="text"
         id="username"
         name="username"
@@ -33,7 +40,7 @@ const SearchForm = ({ setUsersList }: Props) => {
         }}
         value={searchInput}
       />
-      <button>Adicionar</button>
+      <button className=" bg-[#1b8a56] text-[#fff] px-4 py-1 rounded-[4px]">Adicionar</button>
     </form>
   );
 };

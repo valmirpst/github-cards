@@ -9,13 +9,9 @@ const App = () => {
   );
 
   return (
-    <div className="App">
-      <header className="">
-        <SearchForm setUsersList={setUsersList} />
-      </header>
-      <main>
-        <Cards usersList={usersList} />
-      </main>
+    <div className="h-screen gap-2 bg-[#fafafa] p-2 justify-center ">
+      <SearchForm setUsersList={setUsersList} />
+      <Cards usersList={usersList} />
     </div>
   );
 };

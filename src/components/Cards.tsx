@@ -22,7 +22,7 @@ const Cards = ({ usersList }: { usersList: string[] }) => {
   }, [usersList]);
 
   return (
-    <div>
+    <div className="h-full flex gap-2">
       {users.map(user => (
         <Card user={user} key={user.login} />
       ))}
